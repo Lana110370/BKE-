@@ -14,7 +14,8 @@ class MyAgent(MLAgent):
         return reward
      
 my_agent = MyAgent()
-
-train(my_agent, 3000)
+my_agent = load('MyAgent_3000')
  
-save(my_agent, 'MyAgent_3000')
+my_agent.learning = False
+ 
+start(player_x=my_agent)
