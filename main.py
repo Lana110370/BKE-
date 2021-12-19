@@ -24,3 +24,5 @@ train_and_plot(
     iterations=50,
     trainings=100,
     validations=1000)
+
+my_agent = MyAgent(alpha=0.7, epsilon=0.3) 
