@@ -29,3 +29,14 @@ train_and_plot(
     iterations=20,
     trainings=150,
     validations=1500)
+
+
+train(my_agent, 3000)
+
+save(my_agent, 'MyAgent_3000')
+
+my_agent = load('MyAgent_3000')
+
+my_agent.learning = True
+
+start(player_o=my_agent) 
