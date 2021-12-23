@@ -36,13 +36,16 @@ my_agent.learning = True
 while True:
   features = input("Klik op 1 of 2 om te spelen. Klik op 3 of 4 om een grafiek te plotten.")
 
+  # Speel tegen agent
   if features == '1':
     my_agent = load('MyAgent_3000'); 
     start(player_o=my_agent); 
 
+  # Speel tegen iemand anders
   if features == '2':
     start()
 
+  # Plot validatiegrafiek
   if features == '3':
    validation_agent = RandomAgent()
 
@@ -50,6 +53,7 @@ while True:
 
    plot_validation(validation_result)
 
+  # Plot lijngrafiek
   if features == '4':
    train_and_plot(
     agent=my_agent,
