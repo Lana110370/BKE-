@@ -19,24 +19,10 @@ random.seed(1)
 
 #Er wordt, zoals hieronder te zien is, gebruik gemaakt van twee verschillende parameters. 'Alpha' is de leerfactor van de agent en bepaalt hoe snel de agent oude informatie vervangt door nieuwe kennis op te nemen. Door de alpha een hogere waarde te geven die dichter bij de 1 ligt, zal de agent sneller nieuwe informatie willen overnemen. 'Epsilon' is de verkenningsfactor van de agent en bepaalt hoe vaak de agent nieuwe zetten probeert. Door de epsilon een hogere waarde te geven die dichter bij de 1 ligt, zal de agent sneller geneigd zijn om nieuwe zetten te proberen in plaats van alleen sterke zetten te gebruiken die hij al kent. Hoe vaker de agent nieuwe zetten probeert, hoe hoger de kans dat hij een nieuwe goede zet ontdekt.
 
+
 my_agent = MyAgent(alpha=0.7, epsilon=0.5)
 
 random_agent = RandomAgent()
- 
-train_and_plot(
-    agent=my_agent,
-    validation_agent=random_agent,
-    iterations=20,
-    trainings=150,
-    validations=1500)
-
-
-validation_agent = RandomAgent()
-
-validation_result = validate(agent_x=my_agent, agent_o=validation_agent, iterations=150)
-
-plot_validation(validation_result)
-
 
 train(my_agent, 3000)
 
@@ -46,4 +32,27 @@ my_agent = load('MyAgent_3000')
 
 my_agent.learning = True
 
-start(player_o=my_agent) 
+while True:
+  features = input('Klik op 1 om te spelen tegen een agent of op 2 om te spelen tegen iemand anders. Klik op 3 om een validatiegrafiek te plotten en op 4 om een lijngrafiek te plotten.')
+
+  if features == '1':
+    my_agent = load('MyAgent_3000'); 
+    start(player_o=my_agent); 
+
+  if features == '2':
+    start()
+
+  if features == '3':
+   validation_agent = RandomAgent()
+
+   validation_result = validate(agent_x=my_agent,  agent_o=validation_agent, iterations=150)
+
+   plot_validation(validation_result)
+
+  if features == '4':
+   train_and_plot(
+    agent=my_agent,
+    validation_agent=random_agent,
+    iterations=20,
+    trainings=150,
+    validations=1500)
