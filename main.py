@@ -20,7 +20,7 @@ random.seed(1)
 #Er wordt, zoals hieronder te zien is, gebruik gemaakt van twee verschillende parameters. 'Alpha' is de leerfactor van de agent en bepaalt hoe snel de agent oude informatie vervangt door nieuwe kennis op te nemen. Door de alpha een hogere waarde te geven die dichter bij de 1 ligt, zal de agent sneller nieuwe informatie willen overnemen. 'Epsilon' is de verkenningsfactor van de agent en bepaalt hoe vaak de agent nieuwe zetten probeert. Door de epsilon een hogere waarde te geven die dichter bij de 1 ligt, zal de agent sneller geneigd zijn om nieuwe zetten te proberen in plaats van alleen sterke zetten te gebruiken die hij al kent. Hoe vaker de agent nieuwe zetten probeert, hoe hoger de kans dat hij een nieuwe goede zet ontdekt.
 
 
-my_agent = MyAgent(alpha=0.7, epsilon=0.5)
+my_agent = MyAgent(alpha=0.7, epsilon=0.3)
 
 random_agent = RandomAgent()
 
@@ -32,8 +32,9 @@ my_agent = load('MyAgent_3000')
 
 my_agent.learning = True
 
+
 while True:
-  features = input('Klik op 1 om te spelen tegen een agent of op 2 om te spelen tegen iemand anders. Klik op 3 om een validatiegrafiek te plotten en op 4 om een lijngrafiek te plotten.')
+  features = input("Klik op 1 of 2 om te spelen. Klik op 3 of 4 om een grafiek te plotten.")
 
   if features == '1':
     my_agent = load('MyAgent_3000'); 
