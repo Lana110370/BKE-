@@ -31,6 +31,13 @@ train_and_plot(
     validations=1500)
 
 
+validation_agent = RandomAgent()
+
+validation_result = validate(agent_x=my_agent, agent_o=validation_agent, iterations=150)
+
+plot_validation(validation_result)
+
+
 train(my_agent, 3000)
 
 save(my_agent, 'MyAgent_3000')
