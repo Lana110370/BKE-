@@ -35,7 +35,7 @@ my_agent.learning = True
 
 
 while True:
-  features = input("Klik op 1 om tegen de computer te spelen of op 2 om tegen iemand anders         te spelen. Klik op 3 of 4 om de grafieken te plotten.")
+  features = input("Klik op 1 of 2 om te spelen. Klik op 3 of 4 om een grafiek te plotten.")
 
   # Speel tegen agent
   if features == '1':
