@@ -15,6 +15,7 @@ class MyAgent(MLAgent):
      
 random.seed(1)
  
+ 
 #Hoe werken hyperparameters? Hyperparameters zijn variabelen die door middel van bepaalde waardes de manier waarop de agent leert anders samenstelt. Hyperparameters beheersen dus het leerproces van de agent, doordat ze de mogelijkheid bieden om de samenstelling van de agent te veranderen.
 
 #Er wordt, zoals hieronder te zien is, gebruik gemaakt van twee verschillende parameters. 'Alpha' is de leerfactor van de agent en bepaalt hoe snel de agent oude informatie vervangt door nieuwe kennis op te nemen. Door de alpha een hogere waarde te geven die dichter bij de 1 ligt, zal de agent sneller nieuwe informatie willen overnemen. 'Epsilon' is de verkenningsfactor van de agent en bepaalt hoe vaak de agent nieuwe zetten probeert. Door de epsilon een hogere waarde te geven die dichter bij de 1 ligt, zal de agent sneller geneigd zijn om nieuwe zetten te proberen in plaats van alleen sterke zetten te gebruiken die hij al kent. Hoe vaker de agent nieuwe zetten probeert, hoe hoger de kans dat hij een nieuwe goede zet ontdekt.
@@ -34,7 +35,7 @@ my_agent.learning = True
 
 
 while True:
-  features = input("Klik op 1 of 2 om te spelen. Klik op 3 of 4 om een grafiek te plotten.")
+  features = input("Klik op 1 om tegen de computer te spelen of op 2 om tegen iemand anders         te spelen. Klik op 3 of 4 om de grafieken te plotten.")
 
   # Speel tegen agent
   if features == '1':
@@ -58,6 +59,6 @@ while True:
    train_and_plot(
     agent=my_agent,
     validation_agent=random_agent,
-    iterations=20,
+    iterations=25,
     trainings=150,
     validations=1500)
